@@ -25,13 +25,20 @@ Vue.use(VCreditCard);
 
 Or, import inside a component
 ```js
+<template>
+    <VCreditCard/>
+</template>
+
+<script>
 // note that this is not the default import, don't forget the {}
 import {VCreditCard} from 'v-credit-card';
 
-Vue.use(VCreditCard);
-
-// usage
-<v-credit-card/>
+export default {
+    components: {
+        VCreditCard
+    }
+}
+</script>
 ```
 
 #### Available props
