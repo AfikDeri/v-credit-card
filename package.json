@@ -1,13 +1,13 @@
 {
   "private": false,
   "name": "v-credit-card",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Beautiful credit card form component for vueJS",
   "author": {
     "name": "Afik Deri",
     "email": "deri.afik@gmail.com"
   },
-  "main": "dist/VCreditCard.umd.js",
+  "main": "dist/VCreditCard.common.js",
   "unpkg": "dist/VCreditCard.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
