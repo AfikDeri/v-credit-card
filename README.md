@@ -13,25 +13,28 @@ npm install --save v-credit-card
 #### usage
 
 Register the component as a plugin and use it globally
+
+
 ```js
 import Vue from 'vue';
 import VCreditCard from 'v-credit-card';
 
-Vue.use(VCreditCard);
+Vue.component('v-credit-card', VCreditCard);
 
 // usage
 <v-credit-card/>
 ```
 
 Or, import inside a component
+
+
 ```html
 <template>
     <VCreditCard/>
 </template>
 
 <script>
-// note that this is not the default import, don't forget the {}
-import {VCreditCard} from 'v-credit-card';
+import VCreditCard from 'v-credit-card';
 
 export default {
     components: {
@@ -39,6 +42,13 @@ export default {
     }
 }
 </script>
+```
+
+#### Styles
+You must import the CSS to get all the card styles
+```js
+import VCreditCard from 'v-credit-card';
+import 'v-credit-card/dist/VCreditCard.css';
 ```
 
 #### Available props
