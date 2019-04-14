@@ -24,7 +24,7 @@ Vue.use(VCreditCard);
 ```
 
 Or, import inside a component
-```js
+```html
 <template>
     <VCreditCard/>
 </template>
