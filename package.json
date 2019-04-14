@@ -3,10 +3,17 @@
   "name": "v-credit-card",
   "version": "1.0.0",
   "description": "Beautiful credit card form component for vueJS",
-  "main": "./dist/index.js",
+  "author": {
+    "name": "Afik Deri",
+    "email": "deri.afik@gmail.com"
+  },
+  "main": "dist/VCreditCard.umd.js",
+  "unpkg": "dist/VCreditCard.umd.min.js",
   "scripts": {
-    "dev": "vue serve NiceHandsomeButton.vue",
-    "build": "bili --format umd,umd-min,cjs --module-name VCreditCard --global.v-credit-card v-credit-card"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:npm": "vue-cli-service build --target lib --name VCreditCard src/CreditCard.vue",
+    "lint": "vue-cli-service lint"
   },
   "repository": {
     "type": "git",
@@ -25,17 +32,45 @@
   "files": [
     "dist/*"
   ],
-  "author": "Afik Deri",
   "license": "MIT",
   "dependencies": {
     "imask": "^4.1.5",
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "bili": "^4.7.3",
+    "@vue/cli-plugin-babel": "^3.6.0",
+    "@vue/cli-plugin-eslint": "^3.6.0",
+    "@vue/cli-service": "^3.6.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.2.2",
     "node-sass": "^4.11.0",
-    "rollup-plugin-vue": "^5.0.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
