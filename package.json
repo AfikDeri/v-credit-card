@@ -3,10 +3,10 @@
   "name": "v-credit-card",
   "version": "1.0.0",
   "description": "Beautiful credit card form component for vueJS",
-  "main": "./dist/index.cjs.js",
+  "main": "./dist/index.js",
   "scripts": {
     "dev": "vue serve NiceHandsomeButton.vue",
-    "build": "bili --name index --plugin vue --vue.css false"
+    "build": "bili --format umd,umd-min,cjs --module-name VCreditCard --global.v-credit-card v-credit-card"
   },
   "repository": {
     "type": "git",
@@ -28,10 +28,14 @@
   "author": "Afik Deri",
   "license": "MIT",
   "dependencies": {
-    "imask": "^4.1.5"
+    "imask": "^4.1.5",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
+    "bili": "^4.7.3",
     "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0"
+    "rollup-plugin-vue": "^5.0.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10"
   }
 }
