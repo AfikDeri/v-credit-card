@@ -179,7 +179,7 @@ export default {
         }
     },
     watch: {
-        fields(val) {
+        fields() {
             this.$emit('change', this.$data.form);
         }
     },
