@@ -59,6 +59,30 @@ import 'v-credit-card/dist/VCreditCard.css';
 | className  | no       | any string   |    none    | For any custom design, add your own wrapper class |
 | yearDigits | no       | 2,4 (number) |    2       | construct the expiration year (YY or YYYY)        |
 
+#### Events
+
+You can listen for the `@change` event to get an object of all the form fields with their current values
+
+```html
+<template>
+    <VCreditCard @change="creditInfoChanged"/>
+</template>
+
+<script>
+import VCreditCard from 'v-credit-card';
+
+export default {
+    // ...
+    methods: {
+        creditInfoChanged(values) {
+            console.log('Credit card fields', values); 
+        }
+    }
+    // ...
+}
+</script>
+```
+
 ## License
 
 MIT © 2018-present [Anton Reshetov](http://antonreshetov.com)
