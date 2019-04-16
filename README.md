@@ -78,8 +78,45 @@ export default {
         creditInfoChanged(values) {
             console.log('Credit card fields', values); 
         }
+    },
+    components: {
+        VCreditCard
     }
-    // ...
+}
+</script>
+```
+
+#### Example: store the form data in your component
+
+This example shows how to have your local data reflect the changes inside the card component.
+
+```html
+<template>
+    <VCreditCard @change="creditInfoChanged"/>
+</template>
+
+<script>
+import VCreditCard from 'v-credit-card';
+
+export default {
+    data() {
+        return {
+            name: '',
+            cardNumber: '',
+            expiration: '',
+            security: ''
+        };
+    },
+    methods: {
+        creditInfoChanged(values) {
+            for (const key in values) {
+                this[key] = values[key];
+            }
+        }
+    },
+    components: {
+        VCreditCard
+    }
 }
 </script>
 ```
