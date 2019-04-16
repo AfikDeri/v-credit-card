@@ -58,6 +58,7 @@ import 'v-credit-card/dist/VCreditCard.css';
 | direction  | no       | column, row  |    row     | Card and form side-by-side or top to bottom       |
 | className  | no       | any string   |    none    | For any custom design, add your own wrapper class |
 | yearDigits | no       | 2,4 (number) |    2       | construct the expiration year (YY or YYYY)        |
+| noCard     | no       | true, false  |    false   | Show only the form without the credit card image  |
 
 #### Events
 
