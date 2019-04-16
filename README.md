@@ -85,4 +85,4 @@ export default {
 
 ## License
 
-MIT © 2018-present [Anton Reshetov](http://antonreshetov.com)
+MIT © 2018-present
