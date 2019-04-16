@@ -106,7 +106,7 @@ export default {
         },
         noCard: {
             type: Boolean,
-            default: true
+            default: false
         },
         yearDigits: {
             type: Number,
