@@ -1,7 +1,7 @@
 <template>
     <div class="vue-credit-card" :class="className">
         <div class="card-form-and-image" :style="{flexDirection: direction}">
-            <div class="credit-card-image">
+            <div class="credit-card-image" v-if="!noCard">
                 <div class="creditcard" :class="{flipped}" @click="flipped = !flipped">
                     <Front :cardNumber="form.cardNumber"
                         :expiration="form.expiration"
@@ -103,6 +103,10 @@ export default {
         className: {
             type: String,
             default: ''
+        },
+        noCard: {
+            type: Boolean,
+            default: true
         },
         yearDigits: {
             type: Number,
