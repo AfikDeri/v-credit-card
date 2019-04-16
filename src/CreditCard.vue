@@ -180,7 +180,7 @@ export default {
     },
     watch: {
         fields() {
-            this.$emit('change', this.$data.form);
+            this.$emit('change', Object.assign({}, this.$data.form));
         }
     },
     components: {
