@@ -42,7 +42,7 @@
                 </div>
                 <div class="field-group">
                     <div class="field">
-                        <label for="expirationdate">Expiration (mm/yy)</label>
+                        <label for="expirationdate">Expiration (mm/{{isTwoDigitsYear ? 'yy' : 'yyyy'}})</label>
                         <input type="text"
                             name="expiration_date"
                             pattern="[0-9]*"
