@@ -114,6 +114,55 @@ export default {
             validator(value) {
                 return [2, 4].includes(value)
             }
+        },
+        nameLabel: {
+            type: String,
+            default: 'Name',
+            validator: function validator(value) {
+                return typeof  value === 'string' || value instanceof String;
+            }
+        },
+        namePlaceholder: {
+            type: String,
+            default: 'Full Name',
+            validator: function validator(value) {
+                return typeof  value === 'string' || value instanceof String;
+            }
+        },
+        cardLabel: {
+            type: String,
+            default: 'Card Number',
+            validator: function validator(value) {
+                return typeof  value === 'string' || value instanceof String;
+            }
+        },
+        cardPlaceholder: {
+            type: String,
+            default: 'Card Number',
+            validator: function validator(value) {
+                return typeof  value === 'string' || value instanceof String;
+            }
+        },
+        expirationLabel: {
+            type: String,
+            default: 'Expiration',
+            validator: function validator(value) {
+                return typeof  value === 'string' || value instanceof String;
+            }
+        },
+        securityLabel: {
+            type: String,
+            default: 'Security Code',
+            validator: function validator(value) {
+                return typeof  value === 'string' || value instanceof String;
+            }
+        },
+        securityPlaceholder: {
+            type: String,
+            default: 'Code',
+            validator: function validator(value) {
+                return typeof  value === 'string' || value instanceof String;
+            }
         }
     },
     mounted() {
