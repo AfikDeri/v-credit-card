@@ -19,22 +19,22 @@
             </div>
             <div class="credit-card-form">
                 <div class="field">
-                    <label for="name">Name</label>
+                    <label for="name">{{nameLabel}}</label>
                     <input maxlength="20"
                         name="name"
                         type="text"
-                        placeholder="Full Name"
+                        :placeholder="namePlaceholder"
                         v-model="form.name"
                         @focus="flipped = false">
                 </div>
                 <div class="field">
-                    <label for="card-number">Card Number</label>
+                    <label for="card-number">{{cardLabel}}</label>
                     <input type="text"
                         name="card_number"
                         ref="cardNumber"
                         pattern="[0-9]*"
                         inputmode="numeric"
-                        placeholder="Card Number"
+                        :placeholder="cardPlaceholder"
                         @focus="flipped = false">
                     <svg class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <component :is="cardIcon"/>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="field-group">
                     <div class="field">
-                        <label for="expirationdate">Expiration (mm/{{isTwoDigitsYear ? 'yy' : 'yyyy'}})</label>
+                        <label for="expirationdate">{{expirationLabel}} (mm/{{isTwoDigitsYear ? 'yy' : 'yyyy'}})</label>
                         <input type="text"
                             name="expiration_date"
                             pattern="[0-9]*"
@@ -52,12 +52,12 @@
                             @focus="flipped = false">
                     </div>
                     <div class="field">
-                        <label for="securitycode">Security Code</label>
+                        <label for="securitycode">{{securityLabel}}</label>
                         <input type="text"
                             name="security_code"
                             ref="security"
                             pattern="[0-9]*"
-                            placeholder="Code"
+                            :placeholder="securityPlaceholder"
                             inputmode="numeric"
                             @focus="flipped = true">
                     </div>
