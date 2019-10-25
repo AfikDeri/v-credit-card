@@ -19,22 +19,22 @@
             </div>
             <div class="credit-card-form">
                 <div class="field">
-                    <label for="name">{{nameLabel}}</label>
+                    <label for="name">{{ trans.name.label }}</label>
                     <input maxlength="20"
                         name="name"
                         type="text"
-                        :placeholder="namePlaceholder"
+                        :placeholder="trans.name.placeholder"
                         v-model="form.name"
                         @focus="flipped = false">
                 </div>
                 <div class="field">
-                    <label for="card-number">{{cardLabel}}</label>
+                    <label for="card-number">{{ trans.card.label}}</label>
                     <input type="text"
                         name="card_number"
                         ref="cardNumber"
                         pattern="[0-9]*"
                         inputmode="numeric"
-                        :placeholder="cardPlaceholder"
+                        :placeholder="trans.card.placeholder"
                         @focus="flipped = false">
                     <svg class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <component :is="cardIcon"/>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="field-group">
                     <div class="field">
-                        <label for="expirationdate">{{expirationLabel}} (mm/{{isTwoDigitsYear ? 'yy' : 'yyyy'}})</label>
+                        <label for="expirationdate">{{ trans.expiration.label}} (mm/{{isTwoDigitsYear ? 'yy' : 'yyyy'}})</label>
                         <input type="text"
                             name="expiration_date"
                             pattern="[0-9]*"
@@ -52,12 +52,12 @@
                             @focus="flipped = false">
                     </div>
                     <div class="field">
-                        <label for="securitycode">{{securityLabel}}</label>
+                        <label for="securitycode">{{ trans.security.label}}</label>
                         <input type="text"
                             name="security_code"
                             ref="security"
                             pattern="[0-9]*"
-                            :placeholder="securityPlaceholder"
+                            :placeholder="trans.security.placeholder"
                             inputmode="numeric"
                             @focus="flipped = true">
                     </div>
@@ -90,9 +90,31 @@ const masksDefaults = {
 
 const defaultColor = 'grey';
 
+const defaultTranslations = {
+    name: {
+        label: 'Name',
+        placeholder: 'Full Name'
+    },
+    card: {
+        label: 'Card Number',
+        placeholder: 'Card Number'
+    },
+    expiration: {
+        label: 'Expiration'
+    },
+    security: {
+        label: 'Security Code',
+        placeholder: 'Code'
+    }
+}
+
 // Source reference: https://codepen.io/quinlo/pen/YONMEa
 export default {
     props: {
+        trans: {
+            type: Object,
+            default: () => (defaultTranslations)
+        },
         direction: {
             type: String,
             default: 'column',
@@ -113,55 +135,6 @@ export default {
             default: 2,
             validator(value) {
                 return [2, 4].includes(value)
-            }
-        },
-        nameLabel: {
-            type: String,
-            default: 'Name',
-            validator: function validator(value) {
-                return typeof  value === 'string' || value instanceof String;
-            }
-        },
-        namePlaceholder: {
-            type: String,
-            default: 'Full Name',
-            validator: function validator(value) {
-                return typeof  value === 'string' || value instanceof String;
-            }
-        },
-        cardLabel: {
-            type: String,
-            default: 'Card Number',
-            validator: function validator(value) {
-                return typeof  value === 'string' || value instanceof String;
-            }
-        },
-        cardPlaceholder: {
-            type: String,
-            default: 'Card Number',
-            validator: function validator(value) {
-                return typeof  value === 'string' || value instanceof String;
-            }
-        },
-        expirationLabel: {
-            type: String,
-            default: 'Expiration',
-            validator: function validator(value) {
-                return typeof  value === 'string' || value instanceof String;
-            }
-        },
-        securityLabel: {
-            type: String,
-            default: 'Security Code',
-            validator: function validator(value) {
-                return typeof  value === 'string' || value instanceof String;
-            }
-        },
-        securityPlaceholder: {
-            type: String,
-            default: 'Code',
-            validator: function validator(value) {
-                return typeof  value === 'string' || value instanceof String;
             }
         }
     },
