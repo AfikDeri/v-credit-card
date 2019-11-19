@@ -22,6 +22,7 @@
                     <label for="name">{{ trans.name.label }}</label>
                     <input maxlength="20"
                         name="name"
+                           id="name"
                         type="text"
                         :placeholder="trans.name.placeholder"
                         v-model="form.name"
@@ -31,8 +32,9 @@
                     <label for="card-number">{{ trans.card.label}}</label>
                     <input type="text"
                         name="card_number"
+                           id="card-number"
                         ref="cardNumber"
-                        pattern="[0-9]*"
+                        pattern="[0-9 ]*"
                         inputmode="numeric"
                         :placeholder="trans.card.placeholder"
                         @focus="flipped = false">
@@ -45,6 +47,7 @@
                         <label for="expirationdate">{{ trans.expiration.label}} (mm/{{isTwoDigitsYear ? 'yy' : 'yyyy'}})</label>
                         <input type="text"
                             name="expiration_date"
+                               id="expirationdate"
                             pattern="[0-9]*"
                             ref="expiration"
                             :placeholder="isTwoDigitsYear ? 'MM/YY' : 'MM/YYYY'"
@@ -55,8 +58,9 @@
                         <label for="securitycode">{{ trans.security.label}}</label>
                         <input type="text"
                             name="security_code"
+                               id="securitycode"
                             ref="security"
-                            pattern="[0-9]*"
+                            pattern="[0-9\/]*"
                             :placeholder="trans.security.placeholder"
                             inputmode="numeric"
                             @focus="flipped = true">
