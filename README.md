@@ -132,6 +132,8 @@ If you wish to override the default field labels, you can accomplish that by pas
 </template>
 
 <script>
+import VCreditCard from 'v-credit-card';
+
 const translations = {
     name: {
         label: 'Nombre',
@@ -148,9 +150,7 @@ const translations = {
         label: 'Código de seguridad',
         placeholder: 'Código'
     }
-}
-
-import VCreditCard from 'v-credit-card';
+};
 
 export default {
     data() {
