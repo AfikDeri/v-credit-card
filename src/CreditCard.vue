@@ -48,7 +48,7 @@
                         <input type="text"
                             name="expiration_date"
                             id="expirationdate"
-                            pattern="[0-9]*"
+                            pattern="[0-9\/]*"
                             ref="expiration"
                             :placeholder="isTwoDigitsYear ? 'MM/YY' : 'MM/YYYY'"
                             inputmode="numeric"
@@ -60,7 +60,7 @@
                             name="security_code"
                             id="securitycode"
                             ref="security"
-                            pattern="[0-9\/]*"
+                            pattern="[0-9]*"
                             :placeholder="trans.security.placeholder"
                             inputmode="numeric"
                             @focus="flipped = true">
