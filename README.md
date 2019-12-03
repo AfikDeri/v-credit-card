@@ -122,6 +122,50 @@ export default {
 </script>
 ```
 
+#### Translations
+
+If you wish to override the default field labels, you can accomplish that by passing a custom translation object.
+
+```html
+<template>
+    <VCreditCard :trans="translations"/>
+</template>
+
+<script>
+const translations = {
+    name: {
+        label: 'Nombre',
+        placeholder: 'Nombre completo'
+    },
+    card: {
+        label: 'Número de tarjeta',
+        placeholder: 'Número de tarjeta'
+    },
+    expiration: {
+        label: 'Expiration'
+    },
+    security: {
+        label: 'Código de seguridad',
+        placeholder: 'Código'
+    }
+}
+
+import VCreditCard from 'v-credit-card';
+
+export default {
+    data() {
+        return {
+            translations
+        };
+    },
+    components: {
+        VCreditCard
+    }
+}
+</script>
+```
+
+
 ## License
 
 MIT © 2018-present
