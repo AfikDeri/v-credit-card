@@ -122,6 +122,36 @@ export default {
 </script>
 ```
 
+If you need the card type as well (Visa, Mastercard, etc) you can listen to the `@cardChanged` event.
+
+```html
+<template>
+    <VCreditCard @cardChanged="cardChanged"/>
+</template>
+
+<script>
+import VCreditCard from 'v-credit-card';
+
+export default {
+    data() {
+        return {
+            // ...
+            cardName: null
+        };
+    },
+    methods: {
+        // ...
+        cardChanged(cardName) {
+            this.cardName = cardName;
+        }
+    },
+    components: {
+        VCreditCard
+    }
+}
+</script>
+```
+
 #### Translations
 
 If you wish to override the default field labels, you can accomplish that by passing a custom translation object.

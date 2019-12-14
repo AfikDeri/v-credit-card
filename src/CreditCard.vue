@@ -149,6 +149,7 @@ export default {
     data() {
         return {
             flipped: false,
+            cardType: null,
             cardIcon: null,
             cardInnerIcon: null,
             color: 'grey',
@@ -184,6 +185,7 @@ export default {
 
                     this.cardIcon = InputIcons[card.name];
                     this.cardInnerIcon = CardIcons[card.name];
+                    this.cardType = card.name;
                     this.setColor(card.color);
                     return;
                 }
@@ -194,6 +196,7 @@ export default {
         resetCardDefaults() {
             this.cardIcon = null;
             this.cardInnerIcon = null;
+            this.cardType = null;
             this.setColor();
         },
         setColor(colorName) {
@@ -211,6 +214,9 @@ export default {
     watch: {
         fields() {
             this.$emit('change', Object.assign({}, this.$data.form));
+        },
+        cardType(val) {
+            this.$emit('cardChanged', val);
         }
     },
     components: {
