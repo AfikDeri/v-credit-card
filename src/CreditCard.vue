@@ -7,13 +7,16 @@
                         :expiration="form.expiration"
                         :name="form.name"
                         :isTwoDigitsYear="isTwoDigitsYear"
-                        :color="color">
+                        :color="color"
+                        :trans="trans.image"
+                        >
                         <div slot="card-icon" id="ccsingle">
                             <component :is="cardInnerIcon"/>
                         </div>
                     </Front>
                     <Back :nameBack="form.name"
                         :security="form.security"
+                        :trans="trans.image"
                         :color="color"/>
                 </div>
             </div>
@@ -109,6 +112,14 @@ const defaultTranslations = {
     security: {
         label: 'Security Code',
         placeholder: 'Code'
+    },
+    image: {
+        cardnumber: 'card number',
+        cardholder: 'cardholder name',
+        expiration: 'expiration',
+        valid: 'valid',
+        thru: 'thru',
+        security: 'security code'
     }
 }
 

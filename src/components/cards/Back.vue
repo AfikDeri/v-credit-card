@@ -20,7 +20,7 @@
                 </g>
                 <text transform="matrix(1 0 0 1 621.999 227.2734)" id="svgsecurity" class="st6 st7">{{ security }}</text>
                 <g class="st8">
-                    <text transform="matrix(1 0 0 1 518.083 280.0879)" class="st9 st6 st10">security code</text>
+                    <text transform="matrix(1 0 0 1 518.083 280.0879)" class="st9 st6 st10">{{ trans.security }}</text>
                 </g>
                 <rect x="58.1" y="378.6" class="st11" width="375.5" height="13.5" />
                 <rect x="58.1" y="405.6" class="st11" width="421.7" height="13.5" />
@@ -44,6 +44,9 @@ export default {
         color: {
             type: String,
             default: 'greydark'
+        },
+        trans: {
+            type: Object
         }
     }
 }
